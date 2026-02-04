@@ -1,0 +1,26 @@
+import React from 'react';
+
+const Footer = () => {
+  return (
+    <footer className="glass mt-20 border-t border-white/10">
+      <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+        <span className="text-sm text-gray-400 sm:text-center">
+          © {new Date().getFullYear()} <a href="#" className="hover:underline">Ganesh Lokhande</a>. All Rights Reserved.
+        </span>
+        <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-400 sm:mt-0">
+          <li>
+            <a href="https://github.com/ganesh8068/" className="hover:underline me-4 md:me-6">GitHub</a>
+          </li>
+          <li>
+            <a href="http://www.linkedin.com/in/ganesh2707" className="hover:underline me-4 md:me-6">LinkedIn</a>
+          </li>
+          <li>
+            <a href="mailto:ganeshlokhande2707@gmail.com" className="hover:underline">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
