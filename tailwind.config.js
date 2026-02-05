@@ -10,6 +10,14 @@ export default {
         primary: "#6366f1",
         secondary: "#a855f7",
         dark: "#0f172a",
+        retro: {
+            olive: "#556B2F",
+            cream: "#FEFDF5",
+            beige: "#F2F0E9",
+            pink: "#FF9EB5",
+            orange: "#E67E22",
+            text: "#2D2D2D"
+        }
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

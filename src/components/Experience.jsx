@@ -1,109 +1,71 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar } from 'lucide-react';
+import { Briefcase } from 'lucide-react';
 
-const ExperienceCard = ({ company, role, period, description, tech, index }) => (
+const ExperienceCard = ({ role, company, period, description, type, delay }) => (
   <motion.div
     initial={{ opacity: 0, x: -20 }}
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="relative pl-8 md:pl-0"
+    transition={{ duration: 0.5, delay }}
+    className="relative pl-8 pb-12 border-l-2 border-retro-olive/20 last:pb-0"
   >
-    {/* Timeline Line */}
-    <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-800 -translate-x-1/2" />
+    <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-retro-olive border-4 border-retro-cream" />
     
-    {/* Timeline Dot */}
-    <div className="absolute left-[-5px] md:left-1/2 top-0 w-3 h-3 bg-blue-500 rounded-full md:-translate-x-[5.5px] border border-slate-900" />
-
-    <div className={`md:flex justify-between items-start gap-10 ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
-      <div className="md:w-1/2 mb-8 md:mb-0">
-         <div className={`flex flex-col ${index % 2 === 0 && 'md:items-start'} ${index % 2 !== 0 && 'md:items-end'}`}>
-            <div className={`bg-slate-800/50 p-6 rounded-xl border border-white/10 hover:border-blue-500/50 transition-all w-full ${index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'}`}>
-              <div className="flex justify-between items-start mb-2">
-                <h3 className="text-xl font-bold text-white">{role}</h3>
-                <span className="text-sm text-blue-400 font-mono bg-blue-500/10 px-2 py-1 rounded flex items-center gap-1">
-                   <Calendar size={12} />
-                   {period}
-                </span>
-              </div>
-              <h4 className="text-lg text-blue-300 mb-4 flex items-center gap-2">
-                <Briefcase size={16} />
-                {company}
-              </h4>
-              <p className="text-gray-400 mb-4 text-sm leading-relaxed">
-                {description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {tech.map((t) => (
-                  <span key={t} className="px-2 py-1 bg-slate-700/50 text-xs text-gray-300 rounded border border-white/5">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-         </div>
+    <div className="bg-white p-6 rounded-xl border border-retro-olive/10 hover:border-retro-olive hover:shadow-lg transition-all group">
+      <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
+        <div>
+          <h3 className="text-xl font-bold text-retro-text group-hover:text-retro-olive transition-colors">{role}</h3>
+          <p className="text-retro-olive font-medium">{company}</p>
+        </div>
+        <div className="text-right">
+          <span className="inline-block px-3 py-1 bg-retro-olive/10 text-retro-olive text-sm font-bold rounded-full mb-1">
+            {period}
+          </span>
+          <p className="text-xs text-gray-500 font-bold uppercase tracking-wide">{type}</p>
+        </div>
       </div>
-      <div className="hidden md:block md:w-1/2" />
+      
+      <p className="text-gray-600 leading-relaxed font-serif">
+        {description}
+      </p>
     </div>
   </motion.div>
 );
 
 const Experience = () => {
-  const experiences = [
-    {
-      company: "CipherSchool",
-      role: "Summer Training",
-      period: "June 2025 - July 2025",
-      description: "Learned core Data Structures and Algorithms, solved 100+ problems, and improved code efficiency and problem-solving skills.",
-      tech: ["Java", "DSA", "OOP", "Git", "GitHub"]
-    },
-    {
-      company: "Hertz Technology Pvt. Ltd.",
-      role: "Summer Internship",
-      period: "June 2024 - Aug 2024",
-      description: "Developed and optimized responsive user interfaces using React.js, Bootstrap, and Tailwind CSS, resulting in a 25% improvement in load time and 30% increase in mobile responsiveness.",
-      tech: ["React.js", "Three.js", "JavaScript", "Bootstrap", "Tailwind CSS"]
-    },
-    {
-      company: "ElightLabs",
-      role: "Web Developer",
-      period: "April 2023 - July 2023",
-      description: "Enhanced application responsiveness and cross-browser support, contributing to a 15% increase in session duration and contributor to a platform that saw a 20% increase in daily active users.",
-      tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Tailwind CSS"]
-    }
-  ];
+    const experiences = [
+        {
+          role: "Summer Training",
+          company: "CipherSchool",
+          period: "June 2025 - July 2025",
+          type: "Internship",
+          description: "Learned core Data Structures and Algorithms, solved 100+ problems, and improved code efficiency and problem-solving skills. Tech stacks used: Java, DSA, OOP, Git, GitHub"
+        },
+        {
+          role: "Summer Internship",
+          company: "Hertz Technology Pvt. Ltd.",
+          period: "June 2024 - Aug 2024",
+          type: "Internship",
+          description: "Developed and optimized responsive user interfaces using React.js, Bootstrap, and Tailwind CSS, resulting in a 25% improvement in load time. Tech stacks used: React.js, Three.js, JavaScript, Bootstrap, Tailwind CSS"
+        },
+        {
+          role: "Web Developer",
+          company: "ElightLabs",
+          period: "Apr 2023 - July 2023",
+          type: "Internship",
+          description: "Enhanced application responsiveness and cross-browser support, contributing to a 15% increase in session duration. Tech stacks used: HTML5, CSS3, JavaScript, Bootstrap, Tailwind CSS, GitHub"
+        }
+    ];
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
-      <div className="text-center mb-16">
-        <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold text-white mb-4"
-        >
-          Professional Experience
-        </motion.h2>
-        <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto"
-        >
-          My journey in the tech industry, including internships and training.
-        </motion.p>
-      </div>
-
-      <div className="space-y-8 md:space-y-0 relative">
-         {/* Vertical line for mobile - hidden on md up because component handles it */}
-         <div className="md:hidden absolute left-0 top-0 bottom-0 w-0.5 bg-slate-800" />
-         
+    <div className="max-w-3xl mx-auto">
+      <div className="space-y-4">
         {experiences.map((exp, index) => (
           <ExperienceCard
             key={index}
-            index={index}
             {...exp}
+            delay={index * 0.2}
           />
         ))}
       </div>

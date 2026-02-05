@@ -2,118 +2,67 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { GraduationCap, Award } from 'lucide-react';
 
-const EducationCard = ({ school, degree, year, score, delay }) => (
+const EducationCard = ({ degree, institution, year, score, delay }) => (
   <motion.div
-    initial={{ opacity: 0, x: -20 }}
-    whileInView={{ opacity: 1, x: 0 }}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay }}
-    className="flex gap-4 mb-8"
+    className="bg-white p-6 rounded-xl border border-retro-olive/10 hover:border-retro-olive hover:shadow-md transition-all h-full flex flex-col justify-between"
   >
-    <div className="flex flex-col items-center">
-      <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/20 text-blue-400">
-        <GraduationCap size={20} />
-      </div>
-      <div className="w-0.5 h-full bg-slate-800 my-2" />
-    </div>
     <div>
-      <h3 className="text-xl font-bold text-white">{school}</h3>
-      <p className="text-blue-400 font-medium">{degree}</p>
-      <div className="flex gap-4 text-sm text-gray-500 mt-1">
-        <span>{year}</span>
-        <span>•</span>
-        <span>{score}</span>
-      </div>
+        <div className="flex justify-between items-start mb-4">
+            <div className="p-3 bg-retro-olive/10 rounded-lg text-retro-olive">
+                <GraduationCap size={24} />
+            </div>
+            <span className="text-sm font-bold text-gray-500 bg-retro-beige px-3 py-1 rounded-full">
+                {year}
+            </span>
+        </div>
+        
+        <h3 className="text-xl font-bold text-retro-text mb-2 font-display">{degree}</h3>
+        <p className="text-retro-olive font-medium mb-4">{institution}</p>
     </div>
-  </motion.div>
-);
-
-const CertificateCard = ({ title, issuer, date, delay }) => (
-  <motion.div
-    initial={{ opacity: 0, x: 20 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5, delay }}
-    className="bg-slate-800/30 p-4 rounded-lg border border-white/5 flex items-center gap-4 hover:border-purple-500/30 transition-colors"
-  >
-    <div className="p-2 bg-purple-500/10 rounded-lg text-purple-400">
-      <Award size={20} />
-    </div>
-    <div>
-      <h4 className="text-white font-medium">{title}</h4>
-      <p className="text-sm text-gray-400">{issuer} • {date}</p>
+    
+    <div className="mt-auto pt-4 border-t border-retro-olive/10">
+        <span className="text-sm text-gray-600 font-bold">
+            Grade: <span className="text-retro-text">{score}</span>
+        </span>
     </div>
   </motion.div>
 );
 
 const Education = () => {
-  const education = [
-    {
-      school: "Lovely Professional University",
-      degree: "Bachelor of Technology - CSE",
-      year: "Aug 2024 - Present",
-      score: "CGPA: 6.94"
-    },
-    {
-      school: "Vidhalankar Polytechnic",
-      degree: "Diploma in Computer Engineering",
-      year: "Aug 2021 - July 2024",
-      score: "Percentage: 80.29%"
-    },
-    {
-      school: "Shri Gauridutt Mittal Vidyalaya",
-      degree: "Matriculation",
-      year: "April 2020 - March 2021",
-      score: "Percentage: 74.20%"
-    }
-  ];
-
-  const certificates = [
-    {
-      title: "Introduction to Internet of Things",
-      issuer: "NPTL",
-      date: "Oct 2025"
-    },
-    {
-      title: "Product Management",
-      issuer: "GeeksforGeeks",
-      date: "June 2025"
-    },
-    {
-      title: "ChatGPT Prompt Engineering",
-      issuer: "OpenAI",
-      date: "April 2025"
-    },
-    {
-      title: "Computer Communications",
-      issuer: "Coursera",
-      date: "Aug 2024"
-    }
-  ];
+    const education = [
+        {
+            degree: "Bachelor of Technology - Computer Science and Engineering",
+            institution: "Lovely Professional University",
+            year: "Aug 2024 - Present",
+            score: "CGPA: 6.94"
+        },
+        {
+            degree: "Diploma in Computer Engineering",
+            institution: "Vidhalankar Polytechnic",
+            year: "Aug 2021 - July 2024",
+            score: "80.29%"
+        },
+        {
+            degree: "Matriculation",
+            institution: "Shri Gauridutt Mittal Vidyalaya",
+            year: "Apr 2020 - Mar 2021",
+            score: "74.20%"
+        }
+    ];
 
   return (
-    <div className="w-full grid md:grid-cols-2 gap-12">
-      <div>
-        <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-2">
-            Education
-        </h3>
-        <div>
-          {education.map((edu, index) => (
-            <EducationCard key={index} {...edu} delay={index * 0.1} />
-          ))}
-        </div>
-      </div>
-      
-      <div>
-        <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-2">
-            Certifications
-        </h3>
-        <div className="grid gap-4">
-          {certificates.map((cert, index) => (
-            <CertificateCard key={index} {...cert} delay={index * 0.1} />
-          ))}
-        </div>
-      </div>
+    <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {education.map((edu, index) => (
+        <EducationCard
+          key={index}
+          {...edu}
+          delay={index * 0.2}
+        />
+      ))}
     </div>
   );
 };

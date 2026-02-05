@@ -34,13 +34,13 @@ const Contact = () => {
     };
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
-      <div className="text-center mb-16">
+    <div className="w-full p-8 bg-retro-cream h-full overflow-y-auto">
+      <div className="text-center mb-12">
         <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold text-white mb-4"
+            className="text-3xl md:text-4xl font-bold text-retro-text mb-4 font-display"
         >
           Get in Touch
         </motion.h2>
@@ -48,7 +48,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-gray-400 max-w-2xl mx-auto"
+            className="text-gray-600 max-w-2xl mx-auto font-serif"
         >
           Have a project in mind or want to collaborate? Feel free to reach out.
         </motion.p>
@@ -62,33 +62,33 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="space-y-6"
         >
-            <div className="flex items-start gap-4">
-                <div className="p-3 bg-blue-500/10 rounded-lg text-blue-400">
+            <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-retro-olive/20 shadow-sm">
+                <div className="p-3 bg-retro-olive/10 rounded-lg text-retro-olive">
                     <Mail size={24} />
                 </div>
                 <div>
-                    <h3 className="text-lg font-semibold text-white mb-1">Email</h3>
-                    <a href="mailto:ganeshlokhande2707@gmail.com" className="text-gray-400 hover:text-white transition-colors">graphlolkhande2707@gmail.com</a>
+                    <h3 className="text-lg font-bold text-retro-text mb-1">Email</h3>
+                    <a href="mailto:ganeshlokhande2707@gmail.com" className="text-gray-600 hover:text-retro-olive transition-colors">ganeshlokhande2707@gmail.com</a>
                 </div>
             </div>
             
-            <div className="flex items-start gap-4">
-                <div className="p-3 bg-purple-500/10 rounded-lg text-purple-400">
+            <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-retro-olive/20 shadow-sm">
+                <div className="p-3 bg-retro-olive/10 rounded-lg text-retro-olive">
                     <Phone size={24} />
                 </div>
                 <div>
-                    <h3 className="text-lg font-semibold text-white mb-1">Phone</h3>
-                    <a href="tel:+918779182514" className="text-gray-400 hover:text-white transition-colors">+91 87791 82514</a>
+                    <h3 className="text-lg font-bold text-retro-text mb-1">Phone</h3>
+                    <a href="tel:+918779182514" className="text-gray-600 hover:text-retro-olive transition-colors">+91 87791 82514</a>
                 </div>
             </div>
             
-            <div className="flex items-start gap-4">
-                <div className="p-3 bg-green-500/10 rounded-lg text-green-400">
+            <div className="flex items-start gap-4 p-4 bg-white rounded-xl border border-retro-olive/20 shadow-sm">
+                <div className="p-3 bg-retro-olive/10 rounded-lg text-retro-olive">
                     <MapPin size={24} />
                 </div>
                 <div>
-                    <h3 className="text-lg font-semibold text-white mb-1">Location</h3>
-                    <p className="text-gray-400">Mumbai, Maharashtra, India</p>
+                    <h3 className="text-lg font-bold text-retro-text mb-1">Location</h3>
+                    <p className="text-gray-600">Mumbai, Maharashtra, India</p>
                 </div>
             </div>
         </motion.div>
@@ -107,14 +107,14 @@ const Contact = () => {
                     type="text" 
                     name="user_name"
                     placeholder="Name" 
-                    className="w-full px-4 py-3 bg-slate-800/50 rounded-lg border border-white/10 focus:border-blue-500 focus:outline-none text-white transition-colors"
+                    className="w-full px-4 py-3 bg-white rounded-lg border-2 border-retro-olive/20 focus:border-retro-olive focus:outline-none text-retro-text placeholder-gray-400 transition-colors"
                     required
                 />
                 <input 
                     type="email" 
                     name="user_email"
                     placeholder="Email" 
-                    className="w-full px-4 py-3 bg-slate-800/50 rounded-lg border border-white/10 focus:border-blue-500 focus:outline-none text-white transition-colors"
+                    className="w-full px-4 py-3 bg-white rounded-lg border-2 border-retro-olive/20 focus:border-retro-olive focus:outline-none text-retro-text placeholder-gray-400 transition-colors"
                     required
                 />
             </div>
@@ -122,19 +122,19 @@ const Contact = () => {
                 type="text" 
                 name="subject"
                 placeholder="Subject" 
-                className="w-full px-4 py-3 bg-slate-800/50 rounded-lg border border-white/10 focus:border-blue-500 focus:outline-none text-white transition-colors"
+                className="w-full px-4 py-3 bg-white rounded-lg border-2 border-retro-olive/20 focus:border-retro-olive focus:outline-none text-retro-text placeholder-gray-400 transition-colors"
                 required
             />
             <textarea 
                 name="message"
                 placeholder="Message" 
                 rows="4"
-                className="w-full px-4 py-3 bg-slate-800/50 rounded-lg border border-white/10 focus:border-blue-500 focus:outline-none text-white transition-colors resize-none"
+                className="w-full px-4 py-3 bg-white rounded-lg border-2 border-retro-olive/20 focus:border-retro-olive focus:outline-none text-retro-text placeholder-gray-400 transition-colors resize-none"
                 required
             ></textarea>
             
             {status.message && (
-                <div className={`text-sm ${status.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>
+                <div className={`text-sm ${status.type === 'success' ? 'text-green-600' : 'text-red-500'}`}>
                     {status.message}
                 </div>
             )}
@@ -142,7 +142,7 @@ const Contact = () => {
             <button 
                 type="submit" 
                 disabled={loading}
-                className="w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-6 py-3 bg-retro-olive text-white font-bold rounded-lg hover:bg-[#3a4936] transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg"
             >
                 {loading ? (
                     'Sending...'

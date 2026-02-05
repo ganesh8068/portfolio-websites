@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-900 text-white font-sans overflow-x-hidden;
+    @apply bg-[#F2F0E9] text-[#2D2D2D] font-sans overflow-x-hidden;
   }
 }
 
