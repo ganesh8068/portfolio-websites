@@ -1,16 +1,64 @@
-# React + Vite
+# OS-Style Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A unique, interactive portfolio website capable of resembling a desktop operating system environment. Built with React, Tailwind CSS, and Framer Motion, it features draggable windows, a taskbar, and a responsive design.
 
-Currently, two official plugins are available:
+🔗 **Live Demo**: [https://ganeshlokhande.in](https://ganeshlokhande.in)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **OS Interface**: Draggable, closable, and minimizing windows.
+- **Responsive Design**: Fully functional on Desktop, Tablet, and Mobile devices.
+- **Interactive Apps**:
+  - **Profile**: Personal introduction, Experience, and Education.
+  - **Works**: Showcase of projects with GitHub and Live Demo links.
+  - **Skills**: Categorized technical skills with visual proficiency bars.
+  - **Certificates**: Display of professional certifications.
+  - **Contact**: Contact form and social links.
+- **Animations**: Smooth transitions and effects using Framer Motion.
+- **Custom Design**: Retro-modern aesthetic with a unique color palette.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: React (Vite)
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Email**: EmailJS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Installation & Setup
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/ganesh8068/portfolio-website.git
+    cd portfolio-website
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Run development server**
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build for production**
+    ```bash
+    npm run build
+    ```
+
+## 📂 Project Structure
+
+- `src/components/os`: Core OS components (Desktop, Taskbar, Window).
+- `src/components/content`: Content for the apps (Profile, Projects, Skills, etc.).
+- `src/components/ui`: Reusable UI components.
+
+## 📝 Usage
+
+- **Click** desktop icons or taskbar items to open windows.
+- **Drag** windows by their title bar (desktop only).
+- **Close** windows using the 'X' button or re-toggle from the taskbar.
+
+---
+Developed by **Ganesh Lokhande**
