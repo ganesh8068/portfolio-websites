@@ -12,7 +12,7 @@ const Profile = () => {
                     <div className="relative">
                         <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-xl">
                             <img 
-                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=300&h=300" 
+                                src="https://media.licdn.com/dms/image/v2/D5603AQFiUytXp9704w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684919727537?e=1772064000&v=beta&t=MDn7hKf_5-WPC2cAgIcB3uIRVDLB62YQ7GRkLZ6Jrxo" 
                                 alt="Profile" 
                                 className="w-full h-full object-cover"
                             />
@@ -29,7 +29,7 @@ const Profile = () => {
                             FULL STACK DEVELOPER
                         </p>
                         <p className="text-gray-500 italic font-serif">
-                            "Building accessible, pixel-perfect, and performant web experiences."
+                            "Full-Stack Developer skilled in building responsive, scalable web applications using modern frontend and backend technologies. Experienced in developing clean UI, REST APIs, and deploying production-ready applications with a focus on performance and user experience."
                         </p>
                     </div>
                 </div>

@@ -49,8 +49,8 @@ const Desktop = () => {
     return (
         <div className="min-h-screen bg-retro-beige bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[40px_40px] relative overflow-hidden font-sans selection:bg-retro-pink selection:text-white">
             
-            {/* Left Icons */}
-            <div className="absolute top-8 left-8 flex flex-col gap-8">
+            {/* Left Icons - Stack on mobile, Col on Desktop */}
+            <div className="flex flex-row flex-wrap justify-center gap-4 p-4 md:absolute md:top-8 md:left-8 md:flex-col md:gap-8 md:p-0">
                 <DesktopIcon 
                     icon={User} 
                     label="Profile" 
@@ -79,8 +79,8 @@ const Desktop = () => {
                 
             </div>
 
-            {/* Right Icons */}
-            <div className="absolute top-8 right-8 flex flex-col gap-8">
+            {/* Right Icons - Stack on mobile, Col on Desktop */}
+            <div className="flex flex-row flex-wrap justify-center gap-4 p-4 md:absolute md:top-8 md:right-8 md:flex-col md:gap-8 md:p-0">
                 
                 <DesktopIcon 
                     icon={FileText} 

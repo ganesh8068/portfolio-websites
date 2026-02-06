@@ -11,14 +11,15 @@ const Window = ({ id, title, children, onClose, onMinimize, isActive, onFocus, d
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0.9, opacity: 0 }}
       onMouseDown={() => onFocus(id)}
-      className={`absolute w-[1200px] max-w-[98vw] bg-retro-cream border-2 rounded-lg shadow-xl overflow-hidden flex flex-col ${isActive ? 'z-50' : 'z-10'}`}
+      className={`absolute w-[95vw] md:w-[1200px] max-w-[98vw] bg-retro-cream border-2 rounded-lg shadow-xl overflow-hidden flex flex-col ${isActive ? 'z-50' : 'z-10'}`}
       style={{ 
         top: defaultPosition.y, 
         left: defaultPosition.x,
         transform: centered ? 'translate(-50%, -50%)' : 'none',
         maxHeight: '85vh',
         backgroundColor: "#f2f2f0",
-        minHeight: '600px'
+        minHeight: '600px',
+        // Responsive height adjustments handled via max-height, but specific overrides can be added here if needed
       }}
     >
       {/* Title Bar */}
