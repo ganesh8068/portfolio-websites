@@ -5,6 +5,7 @@ import DesktopIcon from './DesktopIcon';
 import Window from './Window';
 import Taskbar from './Taskbar';
 import Profile from './content/Profile';
+import Background3D from './Background3D';
 import Projects from '../Projects';
 import Contact from '../Contact';
 import Skills from '../Skills';
@@ -48,6 +49,7 @@ const Desktop = () => {
 
     return (
         <div className="min-h-screen bg-retro-beige bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[40px_40px] relative overflow-hidden font-sans selection:bg-retro-pink selection:text-white">
+            <Background3D />
             
             {/* Left Icons - Stack on mobile, Col on Desktop */}
             <div className="flex flex-row flex-wrap justify-center gap-4 p-4 md:absolute md:top-8 md:left-8 md:flex-col md:gap-8 md:p-0">
@@ -85,7 +87,7 @@ const Desktop = () => {
                 <DesktopIcon 
                     icon={FileText} 
                     label="Resume"
-                    onClick={() => openWindow('resume', 'Resume', <div className="p-8 text-center text-retro-text">Resume feature coming soon...</div>)} 
+                    onClick={() => window.open('https://drive.google.com/file/d/1QXtxHrvGayShisZ7R72Qj6ustNqjec59/view?usp=sharing', '_blank')} 
                 />
                 <DesktopIcon 
                     icon={Award} 
