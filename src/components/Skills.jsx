@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { 
   Code, Coffee, FileCode, Atom, Box, Layout, Wind, Server, Zap, Database, 
   TestTube, Repeat, Github, GitBranch, Figma, Send, Terminal, Container, 
-  Puzzle, Users, Brain, Shuffle 
+  Puzzle, Users, Brain, Shuffle, Cloud 
 } from 'lucide-react';
 
 const SkillCategoryCard = ({ title, skills, delay }) => (
@@ -46,10 +46,10 @@ const Skills = () => {
         { name: "C++", level: 85, category: "Languages", icon: Code },
         { name: "Java", level: 85, category: "Languages", icon: Coffee },
         { name: "JavaScript", level: 90, category: "Languages", icon: FileCode },
+        { name: "TypeScript", level: 80, category: "Languages", icon: FileCode },
         
         // Frontend Technology
         { name: "React.js", level: 90, category: "Frontend Technology", icon: Atom },
-        { name: "TypeScript", level: 80, category: "Frontend Technology", icon: FileCode },
         { name: "Three.js", level: 75, category: "Frontend Technology", icon: Box },
         { name: "Bootstrap", level: 85, category: "Frontend Technology", icon: Layout },
         { name: "Tailwind CSS", level: 95, category: "Frontend Technology", icon: Wind },
@@ -59,8 +59,10 @@ const Skills = () => {
         { name: "Express.js", level: 80, category: "Backend Technology", icon: Zap },
         { name: "MySQL", level: 80, category: "Backend Technology", icon: Database },
         { name: "MongoDB", level: 80, category: "Backend Technology", icon: Database },
+        { name: "Redis", level: 75, category: "Backend Technology", icon: Database },
         
         // Tools/Platforms
+        { name: "AWS (EC2, S3)", level: 75, category: "Tools & Platforms", icon: Cloud },
         { name: "Jest", level: 70, category: "Tools & Platforms", icon: TestTube },
         { name: "CI/CD", level: 75, category: "Tools & Platforms", icon: Repeat },
         { name: "GitHub", level: 90, category: "Tools & Platforms", icon: Github },
