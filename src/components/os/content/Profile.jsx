@@ -12,7 +12,7 @@ const Profile = () => {
                     <div className="relative">
                         <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-xl">
                             <img 
-                                src="https://media.licdn.com/dms/image/v2/D5603AQFiUytXp9704w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684919727537?e=1772064000&v=beta&t=MDn7hKf_5-WPC2cAgIcB3uIRVDLB62YQ7GRkLZ6Jrxo" 
+                                src="https://media.licdn.com/dms/image/v2/D5603AQFiUytXp9704w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1684919727537?e=1775692800&v=beta&t=E3kzo5orRbxeyr2UPLq0Lb1K1YMiGvhYmMys4GAY-OM" 
                                 alt="Profile" 
                                 className="w-full h-full object-cover"
                             />

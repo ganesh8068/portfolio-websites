@@ -87,7 +87,7 @@ const Desktop = () => {
                 <DesktopIcon 
                     icon={FileText} 
                     label="Resume"
-                    onClick={() => window.open('https://drive.google.com/file/d/1QXtxHrvGayShisZ7R72Qj6ustNqjec59/view?usp=sharing', '_blank')} 
+                    onClick={() => window.open('https://drive.google.com/file/d/1NYLfabPPidW9gQpRzDUQ9_Khlc4aCh_v/view?usp=drive_link', '_blank')} 
                 />
                 <DesktopIcon 
                     icon={Award} 
